@@ -13,7 +13,6 @@ blocks:
     blocks:
       - id: page_heading
         type: Title
-        required: true
         properties:
           content: Log a ticket # Change the title on the page.
           level: 3 # Make the title a little smaller (an html `<h3>`).
@@ -24,6 +23,7 @@ blocks:
           title: Title
       - id: ticket_type
         type: ButtonSelector
+        required: true
         properties:
           title: Ticket type
           options: # Set the allowed options
