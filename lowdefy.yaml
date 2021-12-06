@@ -2,7 +2,24 @@
 lowdefy: 3.23.1
 name: Lowdefy starter
 
+menus:
+  - id: default
+    links:
+      - id: new-ticket
+        type: MenuLink
+        properties:
+          icon: AlertOutlined
+          title: New ticket
+        pageId: new-ticket
+      - id: welcome
+        type: MenuLink
+        properties:
+          icon: HomeOutlined
+          title: Home
+        pageId: welcome
+
 pages:
+  - _ref: new-ticket.yaml
   - id: welcome
     type: PageHeaderMenu
     properties:
