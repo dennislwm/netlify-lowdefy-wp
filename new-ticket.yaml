@@ -1,5 +1,25 @@
 id: new-ticket
 type: PageHeaderMenu
+
+requests:
+  - id: save_data
+    type: GoogleSheetAppendOne
+    connectionId: google_sheet
+    properties:
+      row:
+        # Get all the values to save from state
+        ticket_title:
+          _state: ticket_title
+        ticket_type:
+          _state: ticket_type
+        ticket_description:
+          _state: ticket_description
+        confirm_restart:
+          _state: confirm_restart
+        # Add the date the row was created using the `_date.now` operator.
+        created_date:
+          _date: now
+
 properties:
   title: New ticket # The title in the browser tab.
 layout:
@@ -82,3 +102,8 @@ blocks:
           onClick:
             - id: validate
               type: Validate
+            - id: save_data # Make a request to Google Sheets
+              type: Request
+              params: save_data
+            - id: reset # Reset the form once data has been submitted
+              type: Reset

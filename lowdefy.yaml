@@ -2,6 +2,19 @@
 lowdefy: 3.23.1
 name: Lowdefy starter
 
+connections:
+  - id: google_sheet
+    type: GoogleSheet
+    properties:
+      client_email:
+        _secret: SHEETS_CLIENT_EMAIL
+      private_key:
+        _base64.decode:
+          _secret: SHEETS_PRIVATE_KEY
+      sheetIndex: 0
+      spreadsheetId: 1lD8vjL1Yl659XJqfX6mQAFfUsv0IILiVCJ-EAhlQJVI
+      write: true
+
 menus:
   - id: default
     links:

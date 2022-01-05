@@ -57,3 +57,8 @@ On the "**Site overview**" tab you will find your site url.
 
 # Getting Started
 
+## Running on a Local Server
+
+```
+npx lowdefy@latest dev
+```
